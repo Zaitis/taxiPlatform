@@ -1,28 +1,28 @@
-package pl.painm.taxiplatform.GUI;
+package pl.painm.taxiplatform.GUI.customer;
 
-import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
+import pl.painm.taxiplatform.model.Customer;
 import pl.painm.taxiplatform.model.Driver;
+import pl.painm.taxiplatform.service.CustomerService;
 import pl.painm.taxiplatform.service.DriverService;
 
-@Route(value = "logindriver")
-public class LoginDriverGUI extends VerticalLayout {
+@Route(value = "logincustomer")
+public class LoginCustomerGUI extends VerticalLayout {
     private PasswordField passwordLogin;
     private TextField textLogin;
     private Button buttonConfirm;
-    private DriverService driverService;
+    private CustomerService customerService;
 
     @Autowired
-    LoginDriverGUI(DriverService driverService){
-        this.driverService=driverService;
+    LoginCustomerGUI(CustomerService customerService){
+        this.customerService=customerService;
 
-        textLogin= new TextField("Podaj Login");
+        textLogin= new TextField("Podaj Mail");
         textLogin.setPlaceholder("Wpisz Login");
         passwordLogin = new PasswordField("Podaj Hasło");
         passwordLogin.setPlaceholder("Wpisz Hasło");
@@ -33,10 +33,10 @@ public class LoginDriverGUI extends VerticalLayout {
     }
 
     private void isConfirm() {
-        Driver driver=driverService.findByLogin(textLogin.getValue());
-        if(driver.getPassword().equals(passwordLogin.getValue())){
+        Customer customer=customerService.findByMail(textLogin.getValue());
+        if(customer.getPassword().equals(passwordLogin.getValue())){
 
-            buttonConfirm.getUI().ifPresent(ui -> ui.navigate("driverDashboard"));
+            buttonConfirm.getUI().ifPresent(ui -> ui.navigate("customerDashboard"));
 
         }else
         {

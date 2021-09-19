@@ -1,4 +1,4 @@
-package pl.painm.taxiplatform.GUI;
+package pl.painm.taxiplatform.GUI.driver;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.button.Button;

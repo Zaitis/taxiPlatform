@@ -1,4 +1,4 @@
-package pl.painm.taxiplatform.GUI;
+package pl.painm.taxiplatform.GUI.driver;
 
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;

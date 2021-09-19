@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import pl.painm.taxiplatform.model.Driver;
 import pl.painm.taxiplatform.repo.DriverRepo;
 
-import java.util.List;
-
 @Service
 public class DriverService {
     private DriverRepo driverRepo;

@@ -1,11 +1,9 @@
-package pl.painm.taxiplatform.GUI;
+package pl.painm.taxiplatform.GUI.driver;
 
-import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.atmosphere.interceptor.AtmosphereResourceStateRecovery;
 
 @Route(value = "isdriver")
 public class DriverGUI extends VerticalLayout {
