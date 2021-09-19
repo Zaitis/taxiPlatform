@@ -6,4 +6,5 @@ import pl.painm.taxiplatform.model.Driver;
 
 @Repository
 public interface DriverRepo extends JpaRepository<Driver, Long> {
+    Driver findByLogin(String login);
 }
